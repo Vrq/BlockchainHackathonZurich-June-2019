@@ -1,6 +1,5 @@
 const fs = require('fs')
 const mongoose = require('mongoose')
-
 const loginJSON = JSON.parse(fs.readFileSync('./src/db/login.json'))
 
 const user = loginJSON[0].user
