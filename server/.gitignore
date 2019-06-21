@@ -1,0 +1,3 @@
+node_modules
+src/db/login.json
+.DS_Store
