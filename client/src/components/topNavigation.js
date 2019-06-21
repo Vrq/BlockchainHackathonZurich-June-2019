@@ -33,7 +33,7 @@ class TopNavigation extends Component {
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
                         {/* <MDBNavItem>
-                            <a rel="noopener noreferrer" className="nav-link Ripple-parent" href="/there-is-no-page-like-that" target="_blanc">External 404 example</a>
+                            <a rel="noopener noreferrer" className="nav-link Ripple-parent" href="/there-is-no-page-like-that" target="_blank">External 404 example</a>
                         </MDBNavItem> */}
 
                     </MDBNavbarNav>
