@@ -1,3 +1,4 @@
 node_modules
 src/db/login.json
+src/db/config.js
 .DS_Store
