@@ -1,5 +1,5 @@
 <p align="center">
-  <h2><b>Welcome Visitors</b><h2>
+  <div><b>Welcome Visitors</b></div>
   <br/>
   <img src="https://sbhack19-prod.s3.eu-central-1.amazonaws.com/public-resources/team-logo.gif">
 </p>
