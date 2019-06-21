@@ -12,4 +12,8 @@ mongoose.connect('mongodb+srv://' + USER + ':' + PASSWORD + '@kuznyechik-klr4c.m
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false
+}).then(() => {
+    console.log('Successfully connected to MongoDB')
+}).catch((e) => {
+    console.log("Error while connecting to MongoDB: " + e)
 })
