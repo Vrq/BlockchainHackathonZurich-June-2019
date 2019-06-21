@@ -1,1 +1,1 @@
-# BlockchainHackathonZurich-June-2019
+# SBHACK19-BlockchainHackathonZurich-June-2019
