@@ -11,6 +11,10 @@ app.get('', (req, res) => {
     res.send('Hello express!')
 })
 
+app.get('/about', (req, res) => {
+    res.send('About')
+})
+
 app.post('/users', (req, res) => {
     const user = new User(req.body)
 
