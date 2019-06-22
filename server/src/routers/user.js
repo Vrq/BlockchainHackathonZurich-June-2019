@@ -21,6 +21,7 @@ router.post('/users', multipartWare, async (req, res) => {
 })
 
 router.post('/users/login', multipartWare, async (req, res) => {
+    console.log("logging on sever")
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
