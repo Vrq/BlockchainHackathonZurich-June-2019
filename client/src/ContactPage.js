@@ -81,6 +81,10 @@ class ContactPage extends React.Component {
                         type="textarea"
                         rows="3"
                       />
+                      <div className="text-center mt-3 black-text">
+                        <MDBBtn color="indigo">Send</MDBBtn>
+                        
+                      </div>
                     </MDBCardBody>
                   </MDBCard>
                 </MDBCol>
