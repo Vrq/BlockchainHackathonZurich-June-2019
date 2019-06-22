@@ -12,8 +12,8 @@ class UploadPage extends React.Component {
                        factory_contract: ''}
         this.loadBlockchainData = this.loadBlockchainData.bind(this);
         this.foo = this.foo.bind(this);
-        this.smart_contract = "0x094f4ddb502fF31044e394D6fc875fD13735F198";
-        this.to = "0x5CB01Dfc56904C04e339948c8C93A62d0eA5b2F7";
+        this.smart_contract = "0x5cb01dfc56904c04e339948c8c93a62d0ea5b2f7";
+        this.to = "0x094f4ddb502fF31044e394D6fc875fD13735F198";
         this.abi = [
     {
       "constant": false,

@@ -9,7 +9,7 @@ class RegisterPage extends React.Component {
         e.preventDefault();
         const formData = new FormData(e.target);
         formData.set("timestampLastModified", new Date().toGMTString())
-        const SERVER_URL = "https://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
+        const SERVER_URL = "http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
         const LOCAL_SERVER = "http://localhost:3001"
         fetch(SERVER_URL + '/users/login', {
             method: 'POST',
