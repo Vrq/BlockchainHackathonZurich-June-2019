@@ -1,3 +1,4 @@
 node_modules
 src/db/config.js
+src/awsConfig.js
 .DS_Store
