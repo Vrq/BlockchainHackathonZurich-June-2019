@@ -16,7 +16,7 @@ class UploadPage extends React.Component {
         this.loadBlockchainData = this.loadBlockchainData.bind(this);
         this.foo = this.foo.bind(this);
         this.smart_contract = "0x5cb01dfc56904c04e339948c8c93a62d0ea5b2f7";
-        this.to = "0x094f4ddb502fF31044e394D6fc875fD13735F198";
+        this.to = "0x138a0bbcd5b6b913435ffaf9f77885dc82239226";
         this.abi = [
             {
                 "constant": false,
@@ -300,7 +300,7 @@ class UploadPage extends React.Component {
         console.log(sender)
         console.log(this.to)
         console.log(this.factory)
-        await this.factory.methods.forwardFunds(sender).send(
+        await this.factory.methods.forwardFunds(this.to).send(
             {
                 from: sender,
                 value: this.state.web3js.utils.toWei("0.5", "ether"),
