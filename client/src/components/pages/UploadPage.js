@@ -315,17 +315,21 @@ class UploadPage extends React.Component {
     handleUpload = e => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        formData.set("timestampLastModified", new Date().toGMTString())
         const cookies = new Cookies();
-        formData.set("token", cookies.get("userToken"))
         const SERVER_URL = "http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
         const LOCAL_SERVER = "http://localhost:3001"
         fetch(LOCAL_SERVER + '/users/me/upload', {
             method: 'POST',
             body: formData,
+            headers: {
+                'Authorization': 'Bearer ' + cookies.get("userToken")
+            }
         }).then((res) => {
             if (res.ok) {
                 console.log("Successfully uploaded")
+                res.json().then(responseBody => {
+                    // responseBody should contain the file hash
+                });
             } else {
                 console.log("failed to upload")
             }

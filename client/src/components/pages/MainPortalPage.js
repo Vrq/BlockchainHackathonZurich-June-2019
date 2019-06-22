@@ -5,25 +5,23 @@ import Cookies from 'universal-cookie';
 
 class MainPortalPage extends React.Component {
 
-    handleUpload = e => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        formData.set("timestampLastModified", new Date().toGMTString())
+    componentDidMount() {
         const cookies = new Cookies();
-        formData.set("token", cookies.get("userToken"))
         const SERVER_URL = "http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
         const LOCAL_SERVER = "http://localhost:3001"
-        fetch(LOCAL_SERVER + '/users/me/upload', {
-            method: 'POST',
-            body: formData,
+        fetch(LOCAL_SERVER + '/users/me', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + cookies.get("userToken")
+            }
         }).then((res) => {
             if (res.ok) {
-                console.log("Successfully uploaded")
-            } else {
-                console.log("failed to upload")
+                console.log("Successfully loaded user data")
+                res.json().then(userData => {
+                    // userData should contain the file names and hashes
+                });
             }
         })
-            .catch(() => console.log("error"))
     };
 
     render() {
