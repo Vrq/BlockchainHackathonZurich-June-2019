@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import StartPage from './pages/StartPage';
 import AboutPage from './pages/AboutPage';
 import DashboardPage from './pages/DashboardPage';
@@ -7,6 +7,7 @@ import ProfilePage from './pages/ProfilePage';
 import MetamaskPage from './pages/MetamaskPage';
 import ItemsPage from './pages/ItemsPage';
 import RegisterPage from './pages/RegisterPage';
+import SubmitPage from './pages/SubmitPage';
 
 
 class Routes extends React.Component {
@@ -20,6 +21,7 @@ class Routes extends React.Component {
         <Route path='/app/items' component={ItemsPage} />
         <Route path='/app/profile' component={ProfilePage} />
         <Route path='/app/metamask' component={MetamaskPage}/>
+        <Route path='/app/submitData' component={SubmitPage}/>
       </React.Fragment>
     );
   }
