@@ -37,7 +37,7 @@ class ContactPage extends React.Component {
               </MDBNavItem>
               
               <MDBNavItem>
-                <MDBNavLink to="/Explore">Explore</MDBNavLink>
+                <MDBNavLink to="/">Explore</MDBNavLink>
               </MDBNavItem>
               
             </MDBNavbarNav>
@@ -63,7 +63,7 @@ class ContactPage extends React.Component {
                       
                       We are grateful for all the feedback you provide. Thank you.
                   </h6>
-                  <MDBNavLink to="/Explore"><MDBBtn outline color="white">Learn more</MDBBtn>></MDBNavLink>
+                  <MDBNavLink to="/About"><MDBBtn outline color="white">Learn more</MDBBtn>></MDBNavLink>
                 </div>
                 <MDBCol md="6" xl="5" className="mb-4">
                   <MDBCard className="dark-grey-text">

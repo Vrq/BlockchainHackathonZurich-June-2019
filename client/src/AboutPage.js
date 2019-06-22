@@ -33,7 +33,7 @@ return (
                 <MDBNavLink to="/contact">Contact</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#!">Explore</MDBNavLink>
+                <MDBNavLink to="/">Explore</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>

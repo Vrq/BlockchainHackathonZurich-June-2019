@@ -39,7 +39,7 @@ return (
               </MDBNavItem>
               
               <MDBNavItem>
-                <MDBNavLink to="/Explore">Explore</MDBNavLink>
+                <MDBNavLink to="/app/login">Explore</MDBNavLink>
               </MDBNavItem>
               
             </MDBNavbarNav>
