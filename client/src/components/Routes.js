@@ -8,6 +8,7 @@ import MetamaskPage from './pages/MetamaskPage';
 import ItemsPage from './pages/ItemsPage';
 import RegisterPage from './pages/RegisterPage';
 import SubmitPage from './pages/SubmitPage';
+import UploadPage from './pages/UploadPage';
 
 
 class Routes extends React.Component {
@@ -22,6 +23,7 @@ class Routes extends React.Component {
         <Route path='/app/profile' component={ProfilePage} />
         <Route path='/app/metamask' component={MetamaskPage}/>
         <Route path='/app/submitData' component={SubmitPage}/>
+        <Route path='/app/upload' component={UploadPage}/>
       </React.Fragment>
     );
   }
