@@ -325,6 +325,7 @@ class UploadPage extends React.Component {
             body: formData,
         }).then((res) => {
             if (res.ok) {
+                //this.hash = res.hash
                 console.log("Successfully uploaded")
             } else {
                 console.log("failed to upload")
