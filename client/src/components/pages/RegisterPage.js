@@ -12,9 +12,14 @@ class RegisterPage extends React.Component {
         fetch('http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com/users', {
             method: 'POST',
             body: formData,
-        }).then(() => {
-            console.log("user created")
-            this.props.history.push("/app/login")
+        }).then((res) => {
+            if(res.ok) {
+                console.log("user created")
+                this.props.history.push("/app/login")
+            } else {
+                console.log("error response")
+            }
+          
         })
             .catch(() => console.log("error"))
     };

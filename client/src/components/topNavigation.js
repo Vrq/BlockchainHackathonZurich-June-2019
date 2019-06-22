@@ -22,9 +22,9 @@ class TopNavigation extends Component {
         return (
             <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
                 <MDBNavbarBrand href="/">
-                    <strong>MDB</strong>
+                    <strong>SYNAPSES</strong>
                 </MDBNavbarBrand>
-                <MDBNavbarToggler onClick={this.onClick} />
+                {/* <MDBNavbarToggler onClick={this.onClick} />
                 <MDBCollapse isOpen={this.state.collapse} navbar>
                     <MDBNavbarNav left>
                         <MDBNavItem active>
@@ -35,12 +35,12 @@ class TopNavigation extends Component {
                         </MDBNavItem>
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
-                        {/* <MDBNavItem>
+                        <MDBNavItem>
                             <a rel="noopener noreferrer" className="nav-link Ripple-parent" href="/there-is-no-page-like-that" target="_blank">External 404 example</a>
-                        </MDBNavItem> */}
+                        </MDBNavItem>
 
                     </MDBNavbarNav>
-                </MDBCollapse>
+                </MDBCollapse> */}
             </MDBNavbar>
         );
     }

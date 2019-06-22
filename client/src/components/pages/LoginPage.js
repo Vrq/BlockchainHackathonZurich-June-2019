@@ -11,17 +11,20 @@ class RegisterPage extends React.Component {
         formData.set("timestampLastModified", new Date().toGMTString())
         const SERVER_URL = "http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
         const LOCAL_SERVER = "http://localhost:3001"
-        fetch(LOCAL_SERVER + '/users/login', {
+        fetch(SERVER_URL + '/users/login', {
             method: 'POST',
             body: formData,
         }).then((res) => {
-            console.log("user LOGGED")
-            res.json().then(body => {
-                console.log(body.token)
-                const cookies = new Cookies();
-                cookies.set("userToken", body.token)
-                this.props.history.push("/app/main")
-            })
+            if(res.ok) {
+                console.log("user LOGGED")
+                res.json().then(body => {
+                    console.log(body.token)
+                    const cookies = new Cookies();
+                    cookies.set("userToken", body.token)
+                    this.props.history.push("/app/main")
+                })
+            }
+            console.log("User login error")
         })
             .catch(() => console.log("error"))
     };
