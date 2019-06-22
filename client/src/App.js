@@ -9,10 +9,10 @@ class App extends Component {
   render() {
     return (
       <div className="flexible-content">
-        <Switch>
+        <div>
           <Route path='/' exact component={LandingPage} />
-          <Route path='/dashboard' component={Dashboard} />
-        </Switch>
+          <Route path='/app' component={Dashboard} />
+        </div>
       </div>
     );
   }
