@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import StartPage from './pages/StartPage';
 import AboutPage from './pages/AboutPage';
 import DashboardPage from './pages/DashboardPage';
@@ -10,6 +10,7 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import SubmitPage from './pages/SubmitPage';
 import UploadPage from './pages/UploadPage';
+import MainPortalPage from './pages/MainPortalPage';
 
 
 class Routes extends React.Component {
@@ -23,9 +24,10 @@ class Routes extends React.Component {
         <Route path='/app/dashboard' component={DashboardPage} />
         <Route path='/app/items' component={ItemsPage} />
         <Route path='/app/profile' component={ProfilePage} />
-        <Route path='/app/metamask' component={MetamaskPage}/>
-        <Route path='/app/submitData' component={SubmitPage}/>
-        <Route path='/app/upload' component={UploadPage}/>
+        <Route path='/app/metamask' component={MetamaskPage} />
+        <Route path='/app/submitData' component={SubmitPage} />
+        <Route path='/app/upload' component={UploadPage} />
+        <Route path='/app/main' component={MainPortalPage} />
       </React.Fragment>
     );
   }

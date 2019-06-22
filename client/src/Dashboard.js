@@ -9,10 +9,10 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="flexible-content">
+      <div className="flexible-content ">
         <TopNavigation />
         <SideNavigation />
-        <main id="content" className="p-5">
+        <main id="content" className="p-5 min-height-900">
           <Routes />
         </main>
         <Footer />

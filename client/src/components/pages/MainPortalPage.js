@@ -27,21 +27,18 @@ class RegisterPage extends React.Component {
     };
 
     render() {
+        const cookies = new Cookies();
+        const token = cookies.get("userToken")
         return (
             <React.Fragment>
                 <MDBContainer>
                     <MDBRow className="justify-content-center">
-                        <MDBCol className="col-6">
-                            <form onSubmit={this.handleFormSubmit}>
-                                <p className="h5 text-center mb-4">Login</p>
-                                <div className="grey-text">
-                                    <MDBInput label="Your email" icon="envelope" group type="email" validate error="wrong" success="right" required name="email" />
-                                    <MDBInput label="Your password" icon="lock" required group type="password" validate name="password" />
-                                </div>
-                                <div className="text-center">
-                                    <MDBBtn color="primary" type="submit">Login</MDBBtn>
-                                </div>
-                            </form>
+                        <MDBCol className="col-6 text-center">
+                          {
+                              token ? 
+                              <div>You are allowed</div> : 
+                              <div>You need to login to access this page</div>
+                          }
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
