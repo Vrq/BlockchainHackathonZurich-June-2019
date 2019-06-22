@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBMask,
-MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer, MDBFormInline } from "mdbreact";
+MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer } from "mdbreact";
 import "./landing.css";
 
 class AppPage extends React.Component {
@@ -21,7 +20,6 @@ const overlay = (
 );
 return (
 <div id="apppage">
-  <Router>
     <div>
       <MDBNavbar color="primary-color" dark expand="md" fixed="top" scrolling transparent>
         <MDBContainer>
@@ -46,7 +44,6 @@ return (
       </MDBNavbar>
       {this.state.collapsed && overlay}
     </div>
-  </Router>
   <MDBView>
     <MDBMask className="d-flex justify-content-center align-items-center gradient">
       <MDBContainer>

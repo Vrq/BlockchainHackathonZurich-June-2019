@@ -1,10 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBMask,
-MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer, MDBFormInline } from "mdbreact";
+MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer } from "mdbreact";
 import "./landing.css";
 
-class AppPage extends React.Component {
+class AboutPage extends React.Component {
 state = {
   collapsed: false
 };
@@ -21,7 +20,6 @@ const overlay = (
 );
 return (
 <div id="apppage">
-  <Router>
     <div>
       <MDBNavbar color="primary-color" dark expand="md" fixed="top" scrolling transparent>
         <MDBContainer>
@@ -32,10 +30,10 @@ return (
           <MDBCollapse isOpen={this.state.collapsed} navbar>
             <MDBNavbarNav left>
               <MDBNavItem active>
-                <MDBNavLink to="/About">About</MDBNavLink>
+                <MDBNavLink to="/about">About</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/Contact">Contact</MDBNavLink>
+                <MDBNavLink to="/contact">Contact</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="#!">Explore</MDBNavLink>
@@ -46,11 +44,11 @@ return (
       </MDBNavbar>
       {this.state.collapsed && overlay}
     </div>
-  </Router>
   <MDBView>
     <MDBMask className="d-flex justify-content-center align-items-center gradient">
       <MDBContainer>
         <MDBRow>
+          THIS IS ABOUT PAGE
           <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
             <h1 className="h1-responsive font-weight-bold mt-sm-5">
               SYNAPSES{" "}
@@ -85,4 +83,4 @@ return (
 }
 }
 
-export default AppPage;
+export default AboutPage;

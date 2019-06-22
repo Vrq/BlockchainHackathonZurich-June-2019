@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Dashboard from './Dashboard'
 
 import LandingPage from './LandingPage'
@@ -14,12 +14,15 @@ class App extends Component {
     return (
       <div className="flexible-content">
         <div>
-          <Route path='/' exact component={LandingPage} />
-          <Route path='/about' exact component={AboutPage} />
-          <Route path='/contact' exact component={ContactPage} />
-          <Route path='/explore' exact component={ExplorePage} />
-          
-          <Route path='/app' component={Dashboard} />
+          <Router>
+            <Switch>
+              <Route exact path='/' component={LandingPage} />
+              <Route exact path='/about' component={AboutPage} />
+              <Route exact path='/contact' component={ContactPage} />
+              <Route exact path='/explore' component={ExplorePage} />
+              <Route path='/app' component={Dashboard} />
+            </Switch>
+          </Router>
         </div>
       </div>
     );

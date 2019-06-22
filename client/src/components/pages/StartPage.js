@@ -1,6 +1,5 @@
 import React from 'react';
 import { MDBMask, MDBView, MDBRow, MDBContainer, MDBCol } from 'mdbreact';
-import ReactDOM from "react-dom";
 
 class StartPage extends React.Component {
   render() {
