@@ -53,7 +53,7 @@ return (
               <h2>we provide the most accurate valuations for any type of asset </h2>
               <h2>and reward valuators incentivizing valuation creation.
         </h2>
-              
+              <MDBNavLink to="/"><MDBBtn outline color="white">Start using</MDBBtn>></MDBNavLink>
             </MDBMask>
   </MDBView>
 
