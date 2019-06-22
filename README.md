@@ -5,8 +5,8 @@
   <img src="https://sbhack19-prod.s3.eu-central-1.amazonaws.com/public-resources/team-logo.gif">
 </p>
 <div align="center">
-  <h4>Live Demo:</h4>
-  <a href="https://tk19-client.netlify.com/" target="_blank">https://tk19-client.netlify.com</a>
+  <h4>Live Demo - you can play around on: </h4>
+  <a href="http://k19app.s3-website.eu-central-1.amazonaws.com/" target="_blank">http://k19app.s3-website.eu-central-1.amazonaws.com/</a>
 </div>
 <div align="center">
   <h4>The code:</h4>
