@@ -31,7 +31,7 @@ class TopNavigation extends Component {
                             <MDBNavLink to="/">Home</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
-                            <MDBNavLink to="/register">Create Account</MDBNavLink>
+                            <MDBNavLink to="/app/register">Create Account</MDBNavLink>
                         </MDBNavItem>
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
