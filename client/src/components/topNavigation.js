@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav } from 'mdbreact';
+import Cookies from 'universal-cookie';
 
 class TopNavigation extends Component {
     state = {
@@ -19,6 +20,9 @@ class TopNavigation extends Component {
     }
 
     render() {
+        const cookies = new Cookies();
+        const email = cookies.get("loginEmail")
+
         return (
             <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
                 <MDBNavbarBrand href="/">
@@ -41,6 +45,9 @@ class TopNavigation extends Component {
 
                     </MDBNavbarNav>
                 </MDBCollapse> */}
+                <MDBNavbarNav right>
+                    {email &&  <div>You are logged in as: <b>{email}</b></div> }       
+                </MDBNavbarNav>
             </MDBNavbar>
         );
     }

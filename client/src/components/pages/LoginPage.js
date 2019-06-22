@@ -21,6 +21,8 @@ class RegisterPage extends React.Component {
                     console.log(body.token)
                     const cookies = new Cookies();
                     cookies.set("userToken", body.token)
+                    cookies.set("loginEmail", body.user.email)
+                    console.log(body)
                     this.props.history.push("/app/main")
                 })
             }
@@ -42,7 +44,7 @@ class RegisterPage extends React.Component {
                                     <MDBInput label="Your password" icon="lock" required group type="password" validate name="password" />
                                 </div>
                                 <div className="text-center">
-                                    <MDBBtn color="primary" type="submit">Login</MDBBtn>
+                                    <MDBBtn color="primary" type="submit">Log in</MDBBtn>
                                 </div>
                             </form>
                         </MDBCol>

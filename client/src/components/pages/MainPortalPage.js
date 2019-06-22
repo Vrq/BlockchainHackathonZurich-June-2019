@@ -17,11 +17,11 @@ class MainPortalPage extends React.Component {
             method: 'POST',
             body: formData,
         }).then((res) => {
-           if(res.ok) {
-               console.log("Successfully uploaded")
-           } else {
-               console.log("failed to upload")
-           }
+            if (res.ok) {
+                console.log("Successfully uploaded")
+            } else {
+                console.log("failed to upload")
+            }
         })
             .catch(() => console.log("error"))
     };
@@ -39,18 +39,19 @@ class MainPortalPage extends React.Component {
                                     <div>
                                         <div>You do not have any stuff</div>
                                         <form onSubmit={this.handleUpload}>
-                                            <p className="h5 text-center mb-4">Create an account</p>
                                             <div className="grey-text">
                                                 <MDBInput required group type="file" name="upl" />
                                             </div>
                                             <div className="text-center">
-                                                <MDBBtn color="primary" type="submit">Register</MDBBtn>
+                                                <MDBBtn color="primary" type="submit">Upload</MDBBtn>
                                             </div>
                                         </form>
-                                        <MDBNavLink to="/app/upload"><MDBBtn >Create stuff</MDBBtn></MDBNavLink>
                                     </div>
                                     :
-                                    <div>You need to login to access this page</div>
+                                    <div>
+                                        <div>You need to login to access this page</div>
+                                        <MDBNavLink to="/app/login"><MDBBtn>Log in</MDBBtn></MDBNavLink>
+                                    </div>
                             }
                         </MDBCol>
                     </MDBRow>
