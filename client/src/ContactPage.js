@@ -14,65 +14,38 @@ class ContactPage extends React.Component {
 
   render() {
     const overlay = (
-      <div
-        id="sidenav-overlay"
-        style={{ backgroundColor: "transparent" }}
-        onClick={this.toggleCollapse("navbarCollapse")}
-      />
-    );
+  <div id="sidenav-overlay" style={{ backgroundColor: "transparent" }} onClick={this.handleTogglerClick} />
+);
     return (
       <div id="contactformpage">
-          <div>
-            <MDBNavbar
-              color="deep-purple darken-4"
-              dark
-              expand="md"
-              fixed="top"
-              scrolling
-              transparent
-            >
-              <MDBContainer>
-                <MDBNavbarBrand>
-                  <strong className="white-text">MDB</strong>
-                </MDBNavbarBrand>
-                <MDBNavbarToggler
-                  onClick={this.toggleCollapse("navbarCollapse")}
-                />
-                <MDBCollapse
-                  id="navbarCollapse"
-                  isOpen={this.state.collapseID}
-                  navbar
-                >
-                  <MDBNavbarNav left>
-                    <MDBNavItem active>
-                      <MDBNavLink to="#!">Home</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="#!">Link</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="#!">Profile</MDBNavLink>
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                  <MDBNavbarNav right>
-                    <MDBNavItem>
-                      <MDBFormInline waves>
-                        <div className="md-form my-0">
-                          <input
-                            className="form-control mr-sm-2"
-                            type="text"
-                            placeholder="Search"
-                            aria-label="Search"
-                          />
-                        </div>
-                      </MDBFormInline>
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                </MDBCollapse>
-              </MDBContainer>
-            </MDBNavbar>
-            {this.state.collapseID && overlay}
-          </div>
+      <div>
+      <MDBNavbar color="primary-color" dark expand="md" fixed="top" scrolling transparent>
+        <MDBContainer>
+          
+          <MDBNavbarToggler onClick={this.handleTogglerClick} />
+          <MDBCollapse isOpen={this.state.collapsed} navbar>
+          
+            <MDBNavbarNav left>
+              
+			
+              <MDBNavItem>
+                <MDBNavLink to="/About">About</MDBNavLink>
+              </MDBNavItem>
+              
+              <MDBNavItem>
+                <MDBNavLink to="/contact">Contact</MDBNavLink>
+              </MDBNavItem>
+              
+              <MDBNavItem>
+                <MDBNavLink to="/Explore">Explore</MDBNavLink>
+              </MDBNavItem>
+              
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBContainer>
+      </MDBNavbar>
+      {this.state.collapsed && overlay}
+    </div>
 
         <MDBView>
           <MDBMask
@@ -82,17 +55,16 @@ class ContactPage extends React.Component {
             <MDBContainer>
               <MDBRow>
                 <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-                  <h1 className="display-4 font-weight-bold">Lorem ipsum </h1>
+                  <h1 className="display-4 font-weight-bold">Contact us</h1>
                   <hr className="hr-light" />
                   <h6 className="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Rem repellendus quasi fuga nesciunt dolorum nulla magnam
-                    veniam sapiente, fugiat! Commodi sequi non animi ea dolor
-                    molestiae iste.
+                      We will be happy to answer your questions. <br />
+                      
+                      Please, let us know if you have any problems working with our platform. <br />
+                      
+                      We are grateful for all the feedback you provide. Thank you.
                   </h6>
-                  <MDBBtn outline color="white">
-                    Learn More
-                  </MDBBtn>
+                  <MDBNavLink to="/Explore"><MDBBtn outline color="white">Learn more</MDBBtn>></MDBNavLink>
                 </div>
                 <MDBCol md="6" xl="5" className="mb-4">
                   <MDBCard className="dark-grey-text">
@@ -121,13 +93,7 @@ class ContactPage extends React.Component {
           <MDBRow className="py-5">
             <MDBCol md="12" className="text-center">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                We use ETH smart-contracts to bring together anyone who wants to sell any type of asset (data, multimedia, expertise, physical entities) with whose who need these assets.
               </p>
             </MDBCol>
           </MDBRow>
