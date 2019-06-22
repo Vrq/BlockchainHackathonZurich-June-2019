@@ -26,28 +26,19 @@ return (
       <MDBNavbar color="primary-color" dark expand="md" fixed="top" scrolling transparent>
         <MDBContainer>
           <MDBNavbarBrand>
-            <strong className="white-text">MDB</strong>
+            <strong className="white-text">SYNAPSES</strong>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.handleTogglerClick} />
           <MDBCollapse isOpen={this.state.collapsed} navbar>
             <MDBNavbarNav left>
               <MDBNavItem active>
-                <MDBNavLink to="#!">Home</MDBNavLink>
+                <MDBNavLink to="/About">About</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#!">Link</MDBNavLink>
+                <MDBNavLink to="/Contact">Contact</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#!">Profile</MDBNavLink>
-              </MDBNavItem>
-            </MDBNavbarNav>
-            <MDBNavbarNav right>
-              <MDBNavItem>
-                <MDBFormInline waves>
-                  <div className="md-form my-0">
-                    <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-                  </div>
-                </MDBFormInline>
+                <MDBNavLink to="#!">Explore</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
@@ -68,10 +59,12 @@ return (
             <h6 className="mb-4">
               Universal marketplace to incentivize value creation
             </h6>
-            <MDBBtn color="white">Download</MDBBtn>
-            <MDBBtn outline color="white">
-              Learn More
-            </MDBBtn>
+            
+		
+			<MDBNavLink to="/app/login"><MDBBtn outline color="white">Login</MDBBtn></MDBNavLink>
+			
+			<MDBNavLink to="/app/register"><MDBBtn outline color="white">Sign up</MDBBtn>></MDBNavLink>
+			
           </div>
         </MDBRow>
       </MDBContainer>
