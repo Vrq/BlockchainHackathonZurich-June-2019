@@ -1,5 +1,6 @@
 import React from 'react'
 import { MDBCol, MDBRow, MDBInput, MDBBtn } from 'mdbreact';
+import { Link, withRouter } from 'react-router-dom';
 
 
 class RegisterPage extends React.Component {
@@ -11,7 +12,10 @@ class RegisterPage extends React.Component {
         fetch('http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com/users', {
             method: 'POST',
             body: formData,
-        }).then(() => console.log("user created"))
+        }).then(() => {
+            console.log("user created")
+            this.props.history.push("/app/login")
+        })
             .catch(() => console.log("error"))
     };
 
@@ -19,14 +23,14 @@ class RegisterPage extends React.Component {
         return (
             <React.Fragment>
                 <div className="full">
-                    <MDBRow>
+                    <MDBRow className="justify-content-center">
                         <MDBCol className="col-6">
                             <form onSubmit={this.handleFormSubmit}>
-                                <p className="h5 text-center mb-4">Sign up</p>
+                                <p className="h5 text-center mb-4">Create an account</p>
                                 <div className="grey-text">
-                                    <MDBInput label="Your name" required icon="user" group type="text" name="name"/>
-                                    <MDBInput label="Your email" icon="envelope" group type="email" validate error="wrong" success="right" required name="email"/>
-                                    <MDBInput label="Your password" icon="lock" required group type="password" validate name="password"/>
+                                    <MDBInput label="Your name" required icon="user" group type="text" name="name" />
+                                    <MDBInput label="Your email" icon="envelope" group type="email" validate error="wrong" success="right" required name="email" />
+                                    <MDBInput label="Your password" icon="lock" required group type="password" validate name="password" />
                                 </div>
                                 <div className="text-center">
                                     <MDBBtn color="primary" type="submit">Register</MDBBtn>
@@ -40,4 +44,4 @@ class RegisterPage extends React.Component {
     }
 }
 
-export default RegisterPage;
+export default withRouter(RegisterPage);
