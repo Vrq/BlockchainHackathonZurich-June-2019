@@ -15,9 +15,9 @@ class App extends Component {
       <div className="flexible-content">
         <div>
           <Route path='/' exact component={LandingPage} />
-          <Route path='/about' exact component={AboutPage} />
-          <Route path='/contact' exact component={ContactPage} />
-          <Route path='/explore' exact component={ExplorePage} />
+          <Route path='/About' exact component={AboutPage} />
+          <Route path='/Contact' exact component={ContactPage} />
+          <Route path='/Explore' exact component={ExplorePage} />
           
           <Route path='/app' component={Dashboard} />
         </div>

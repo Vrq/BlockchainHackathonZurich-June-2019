@@ -4,7 +4,7 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNav
 MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer, MDBFormInline } from "mdbreact";
 import "./landing.css";
 
-class AppPage extends React.Component {
+class LandingPage extends React.Component {
 state = {
   collapsed: false
 };
@@ -31,15 +31,19 @@ return (
           <MDBNavbarToggler onClick={this.handleTogglerClick} />
           <MDBCollapse isOpen={this.state.collapsed} navbar>
             <MDBNavbarNav left>
-              <MDBNavItem active>
+            
+              <MDBNavItem>
                 <MDBNavLink to="/About">About</MDBNavLink>
               </MDBNavItem>
+              
               <MDBNavItem>
                 <MDBNavLink to="/Contact">Contact</MDBNavLink>
               </MDBNavItem>
+              
               <MDBNavItem>
-                <MDBNavLink to="#!">Explore</MDBNavLink>
+                <MDBNavLink to="/Explore">Explore</MDBNavLink>
               </MDBNavItem>
+              
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBContainer>
@@ -85,4 +89,4 @@ return (
 }
 }
 
-export default AppPage;
+export default LandingPage;
