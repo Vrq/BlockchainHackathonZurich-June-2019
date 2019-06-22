@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import StartPage from './pages/StartPage';
+import AboutPage from './pages/AboutPage';
 import DashboardPage from './pages/DashboardPage';
 import ProfilePage from './pages/ProfilePage';
 import TablesPage from './pages/TablesPage';
@@ -11,6 +13,8 @@ class Routes extends React.Component {
     return (
       <Switch>
         <Route path='/' exact component={DashboardPage} />
+        <Route path='/start' component={StartPage} />
+        <Route path='/about' component={AboutPage} />
         <Route path='/dashboard' component={DashboardPage} />
         <Route path='/profile' component={ProfilePage} />
         <Route path='/tables' component={TablesPage} />
