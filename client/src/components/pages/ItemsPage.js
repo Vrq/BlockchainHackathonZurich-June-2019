@@ -20,7 +20,7 @@ const ItemsPage =  () => {
       <ChartSection2 />
       <MDBRow className="mb-4">
           <MDBCard>
-              <MDBCardImage className="img-fluid" src={https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500} />
+              <MDBCardImage className="img-fluid" src={'https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'} />
               <MDBCardBody>
                   <MDBCardTitle className="text-center mb-2 font-bold">Alice Mayer</MDBCardTitle>
                   <MDBCardTitle sub className="text-center indigo-text mb-2 font-bold">Photographer</MDBCardTitle>
