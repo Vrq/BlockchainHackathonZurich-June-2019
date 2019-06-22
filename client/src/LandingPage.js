@@ -54,6 +54,12 @@ return (
       <MDBContainer>
         <MDBRow>
           <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
+            
+            <h2 className="h2-responsive font-weight-bold mt-sm-4">
+              Get valuations of your asset or provide valuations and be rewarded{" "}
+            </h2><br /><br />
+            
+            
             <h1 className="h1-responsive font-weight-bold mt-sm-5">
               SYNAPSES{" "}
             </h1>
