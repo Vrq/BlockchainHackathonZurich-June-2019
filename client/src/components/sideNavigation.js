@@ -16,7 +16,7 @@ const TopNavigation = () => {
                         Your stuff
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/app/metamask" activeClassName="activeClass">
+                <NavLink to="/app/upload" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="user" className="mr-3"/>
                         Create stuff

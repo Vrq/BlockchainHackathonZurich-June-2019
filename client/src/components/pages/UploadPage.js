@@ -1,7 +1,8 @@
-import { MDBCol, MDBRow, MDBInput, MDBBtn } from 'mdbreact';
+import { MDBCol, MDBRow, MDBInput, MDBBtn, MDBContainer, MDBNavLink } from 'mdbreact';
 import * as constants from "../../constants";
 import React from 'react';
 import Web3 from 'web3'
+import Cookies from 'universal-cookie';
 
 
 class UploadPage extends React.Component {
@@ -312,15 +313,38 @@ class UploadPage extends React.Component {
     }
 
     render() {
+        const cookies = new Cookies();
+        const token = cookies.get("userToken")
         return (
             <div>
                 {this.state.noweb3 ? <h3 className="text-center">You need to install Metamask (link) to use our portal</h3>
                     :
-                    <div className="container">
-                        <h1>Hello, World!</h1>
-                        <p>Your account: {this.state.account}</p>
-                        <MDBBtn color="primary" onClick={this.foo}>Test</MDBBtn>
-                    </div>
+                    <MDBContainer>
+                        <MDBRow className="justify-content-center">
+                            <MDBCol className="col-6 text-center">
+                                {
+                                    token ?
+                                        <div>
+                                            {/* <p>Your account: {this.state.account}</p> */}
+                                            <h4>Upload your piece of art</h4>
+                                            <form onSubmit={this.handleUpload}>
+                                                <div className="grey-text">
+                                                    <MDBInput required group type="file" name="upl" />
+                                                </div>
+                                                <div className="text-center">
+                                                    <MDBBtn color="primary" type="submit">Upload</MDBBtn>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        :
+                                        <div>
+                                            <div>You need to login to access this page</div>
+                                            <MDBNavLink to="/app/login"><MDBBtn>Log in</MDBBtn></MDBNavLink>
+                                        </div>
+                                }
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
                 }
             </div>
         );

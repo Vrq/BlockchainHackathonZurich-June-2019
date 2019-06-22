@@ -38,14 +38,14 @@ class MainPortalPage extends React.Component {
                                 token ?
                                     <div>
                                         <div>You do not have any stuff</div>
-                                        <form onSubmit={this.handleUpload}>
+                                        {/* <form onSubmit={this.handleUpload}>
                                             <div className="grey-text">
                                                 <MDBInput required group type="file" name="upl" />
                                             </div>
                                             <div className="text-center">
                                                 <MDBBtn color="primary" type="submit">Upload</MDBBtn>
                                             </div>
-                                        </form>
+                                        </form> */}
                                     </div>
                                     :
                                     <div>
