@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
-import Routes from '../src/components/Routes';
-import TopNavigation from './components/topNavigation';
-import SideNavigation from './components/sideNavigation';
-import Footer from './components/Footer';
 import './index.css';
+import { Route, Switch } from 'react-router-dom';
+import Dashboard from './Dashboard'
+import LandingPage from './LandingPage'
 
 class App extends Component {
-  
+
   render() {
     return (
-        <div className="flexible-content">
-          <TopNavigation />
-          <SideNavigation />
-          <main id="content" className="p-5">
-            <Routes />
-          </main>
-          <Footer />
-        </div>
+      <div className="flexible-content">
+        <Switch>
+          <Route path='/' exact component={LandingPage} />
+          <Route path='/dashboard' component={Dashboard} />
+        </Switch>
+      </div>
     );
   }
 }
