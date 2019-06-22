@@ -5,7 +5,8 @@
   "author": "Team Kuznyechik",
   "license": "MIT",
   "dependencies": {
-    "ganache-core": "^2.5.6",
+    "ethjs-contract": "^0.2.3",
+    "ethjs-query": "^0.3.8",
     "google-map-react": "^1.0.6",
     "mdbreact": "^4.9.0",
     "react": "^16.7.0",
