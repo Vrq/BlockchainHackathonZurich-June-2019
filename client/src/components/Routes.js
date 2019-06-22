@@ -5,6 +5,8 @@ import ProfilePage from './pages/ProfilePage';
 import TablesPage from './pages/TablesPage';
 import MapsPage from './pages/MapsPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ItemsPage from './pages/ItemsPage';
+
 
 class Routes extends React.Component {
   render() {
@@ -12,6 +14,7 @@ class Routes extends React.Component {
       <Switch>
         <Route path='/' exact component={DashboardPage} />
         <Route path='/dashboard' component={DashboardPage} />
+        <Route path='/items' component={ItemsPage} />
         <Route path='/profile' component={ProfilePage} />
         <Route path='/tables' component={TablesPage} />
         <Route path='/maps' component={MapsPage} />
