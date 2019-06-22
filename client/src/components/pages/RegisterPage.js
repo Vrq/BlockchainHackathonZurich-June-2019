@@ -9,7 +9,7 @@ class RegisterPage extends React.Component {
         e.preventDefault();
         const formData = new FormData(e.target);
         formData.set("timestampLastModified", new Date().toGMTString())
-        fetch('https://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com/users', {
+        fetch('http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com/users', {
             method: 'POST',
             body: formData,
         }).then((res) => {
