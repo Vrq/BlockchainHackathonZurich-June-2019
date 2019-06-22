@@ -4,9 +4,7 @@ import StartPage from './pages/StartPage';
 import AboutPage from './pages/AboutPage';
 import DashboardPage from './pages/DashboardPage';
 import ProfilePage from './pages/ProfilePage';
-import TablesPage from './pages/TablesPage';
-import MapsPage from './pages/MapsPage';
-import NotFoundPage from './pages/NotFoundPage';
+import MetamaskPage from './pages/MetamaskPage';
 import ItemsPage from './pages/ItemsPage';
 import RegisterPage from './pages/RegisterPage';
 
@@ -21,9 +19,7 @@ class Routes extends React.Component {
         <Route path='/app/dashboard' component={DashboardPage} />
         <Route path='/app/items' component={ItemsPage} />
         <Route path='/app/profile' component={ProfilePage} />
-        <Route path='/app/tables' component={TablesPage} />
-        <Route path='/app/maps' component={MapsPage} />
-        <Route path='/app/404' component={NotFoundPage} />
+        <Route path='/app/metamask' component={MetamaskPage}/>
       </React.Fragment>
     );
   }

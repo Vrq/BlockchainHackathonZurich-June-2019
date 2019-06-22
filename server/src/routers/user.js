@@ -2,8 +2,13 @@ const express = require('express')
 const User = require('../models/user')
 const auth = require('../middleware/auth')
 const router = new express.Router()
+const multipart = require('connect-multiparty');
 
-router.post('/users', async (req, res) => {
+const multipartWare = multipart();
+
+router.post('/users', multipartWare, async (req, res) => {
+    console.log("request received")
+    console.log(req.body)
     const user = new User(req.body)
 
     try {

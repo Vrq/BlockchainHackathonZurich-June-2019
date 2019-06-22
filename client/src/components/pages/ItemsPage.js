@@ -6,11 +6,9 @@ import TableSection from './sections/TableSection';
 import BreadcrumSection from './sections/BreadcrumSection';
 import ChartSection1 from './sections/ChartSection1';
 import ChartSection2 from './sections/ChartSection2';
-import MapSection from './sections/MapSection';
-import ModalSection from './sections/ModalSection';
-import { MDBCard, MDBCol, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from 'mdbreact';
+import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdbreact';
 
-const ItemsPage =  () => {
+const ItemsPage = () => {
   return (
     <React.Fragment>
       <BreadcrumSection />
@@ -19,20 +17,20 @@ const ItemsPage =  () => {
       <TableSection />
       <ChartSection2 />
       <MDBRow className="mb-4">
-          <MDBCard>
-              <MDBCardImage className="img-fluid" src={'https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'} />
-              <MDBCardBody>
-                  <MDBCardTitle className="text-center mb-2 font-bold">Alice Mayer</MDBCardTitle>
-                  <MDBCardTitle sub className="text-center indigo-text mb-2 font-bold">Photographer</MDBCardTitle>
-                  <MDBCardText>
-                      <strong className="mb-2">About:</strong>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis quod animi dignissimos consectetur quibusdam numquam laboriosam, minus, provident...
+        <MDBCard>
+          <MDBCardImage className="img-fluid" src={'https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'} />
+          <MDBCardBody>
+            <MDBCardTitle className="text-center mb-2 font-bold">Alice Mayer</MDBCardTitle>
+            <MDBCardTitle sub className="text-center indigo-text mb-2 font-bold">Photographer</MDBCardTitle>
+            <MDBCardText>
+              <strong className="mb-2">About:</strong>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis quod animi dignissimos consectetur quibusdam numquam laboriosam, minus, provident...
                   </MDBCardText>
-                  <div className="row justify-content-end pr-1">
-                      <MDBBtn size="sm" outline color="primary">More...</MDBBtn>
-                  </div>
-              </MDBCardBody>
-          </MDBCard>
+            <div className="row justify-content-end pr-1">
+              <MDBBtn size="sm" outline color="primary">More...</MDBBtn>
+            </div>
+          </MDBCardBody>
+        </MDBCard>
       </MDBRow>
       <AdminCardSection2 />
     </React.Fragment>
