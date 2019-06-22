@@ -20,7 +20,7 @@ router.post('/users', multipartWare, async (req, res) => {
     }
 })
 
-router.post('/users/login', async (req, res) => {
+router.post('/users/login', multipartWare, async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
@@ -30,7 +30,7 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-router.post('/users/logout', auth, async (req, res) => {
+router.post('/users/logout', [auth, multipartWare], async (req, res) => {
     try {
         req.user.tokens = req.user.tokens.filter((token) => {
             return token.token !== req.token
@@ -42,7 +42,7 @@ router.post('/users/logout', auth, async (req, res) => {
     }
 })
 
-router.post('/users/logoutAll', auth, async (req, res) => {
+router.post('/users/logoutAll', [auth, multipartWare], async (req, res) => {
     try {
         req.user.tokens = []
         await req.user.save()
@@ -52,11 +52,11 @@ router.post('/users/logoutAll', auth, async (req, res) => {
     }
 })
 
-router.get('/users/me', auth, async (req, res) => {
+router.get('/users/me', [auth, multipartWare], async (req, res) => {
     res.send(req.user)
 })
 
-router.patch('/users/me', auth, async (req, res) => {
+router.patch('/users/me', [auth, multipartWare], async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'email', 'password']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
@@ -75,7 +75,7 @@ router.patch('/users/me', auth, async (req, res) => {
     }
 })
 
-router.delete('/users/me', auth, async (req, res) => {
+router.delete('/users/me', [auth, multipartWare], async (req, res) => {
     try {
         await req.user.remove()
         res.send(req.user)
