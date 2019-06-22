@@ -8,6 +8,7 @@ contract Factory is Ownable{
 
     event DataOfferCreated(bytes32 id);
     event EmitedVouchers(bytes32 id, address to, uint amount);
+    event FundsForward(address from, address to, uint value);
 
     function createDataOffer(bytes32 id) public onlyOwner{
         Voucher v = new Voucher(id);
@@ -21,6 +22,11 @@ contract Factory is Ownable{
         Voucher v = vouchers[id];
         v.mint(to, amount);
         emit EmitedVouchers(id, to, amount);
+    }
+
+    function forwardFunds(address payable a) public payable{
+        a.transfer(msg.value);
+        emit FundsForward(msg.sender, a, msg.value);
     }
 
 
