@@ -46,13 +46,13 @@ return (
     <MDBMask className="flex-center flex-column text-white text-center gradient">
               <h1>SYNAPSES</h1>
               <h2><br /></h2>
-              <h2>Here demand meets solutions.</h2><br />
-              <h5>Try now easy ways to benefit from using SYNAPSES: </h5>
-              <h5>get valuations of your asset or provide valuations to the assets of others to be rewarded</h5><br />
-              <h5>With the wisdom of the crowd and ETH smart-contracts we provide the most accurate valuations for any type of asset </h5>
-              <h5>(data, multimedia, expertise, physical entities) </h5>
-              <h5>and reward valuators incentivizing valuation creation.
-        </h5>
+              <h2>Try now easy ways to benefit from using SYNAPSES: </h2>
+              <h2>get valuations of your asset or </h2>
+              <h2>provide valuations to the assets of others to be rewarded</h2><br /><br />
+              <h2>With the wisdom of the crowd and ETH smart-contracts </h2>
+              <h2>we provide the most accurate valuations for any type of asset </h2>
+              <h2>and reward valuators incentivizing valuation creation.
+        </h2>
               
             </MDBMask>
   </MDBView>
