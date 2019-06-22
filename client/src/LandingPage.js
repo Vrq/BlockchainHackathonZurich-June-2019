@@ -1,9 +1,9 @@
 import React from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBMask,
+import { MDBNavbar, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBMask,
 MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer } from "mdbreact";
 import "./landing.css";
 
-class LangingPage extends React.Component {
+class LandingPage extends React.Component {
 state = {
   collapsed: false
 };
@@ -23,27 +23,32 @@ return (
     <div>
       <MDBNavbar color="primary-color" dark expand="md" fixed="top" scrolling transparent>
         <MDBContainer>
-          <MDBNavbarBrand>
-            <strong className="white-text">SYNAPSES</strong>
-          </MDBNavbarBrand>
+          
           <MDBNavbarToggler onClick={this.handleTogglerClick} />
           <MDBCollapse isOpen={this.state.collapsed} navbar>
+          
             <MDBNavbarNav left>
-              <MDBNavItem active>
-                <MDBNavLink to="/about">About</MDBNavLink>
+              
+			
+              <MDBNavItem>
+                <MDBNavLink to="/About">About</MDBNavLink>
               </MDBNavItem>
+              
               <MDBNavItem>
                 <MDBNavLink to="/contact">Contact</MDBNavLink>
               </MDBNavItem>
+              
               <MDBNavItem>
-                <MDBNavLink to="#!">Explore</MDBNavLink>
+                <MDBNavLink to="/Explore">Explore</MDBNavLink>
               </MDBNavItem>
+              
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>
       {this.state.collapsed && overlay}
     </div>
+  
   <MDBView>
     <MDBMask className="d-flex justify-content-center align-items-center gradient">
       <MDBContainer>
@@ -82,4 +87,4 @@ return (
 }
 }
 
-export default LangingPage;
+export default LandingPage;
