@@ -1,5 +1,5 @@
 import React from 'react'
-import { MDBCol, MDBRow, MDBInput, MDBBtn, MDBContainer } from 'mdbreact';
+import { MDBCol, MDBRow, MDBNavLink, MDBBtn, MDBContainer } from 'mdbreact';
 import Cookies from 'universal-cookie';
 
 
@@ -36,7 +36,11 @@ class RegisterPage extends React.Component {
                         <MDBCol className="col-6 text-center">
                           {
                               token ? 
-                              <div>You are allowed</div> : 
+                              <div>
+                                  <div>You do not have any stuff</div>
+                                  <MDBNavLink to="/app/upload"><MDBBtn >Create stuff</MDBBtn></MDBNavLink>
+                              </div> 
+                              : 
                               <div>You need to login to access this page</div>
                           }
                         </MDBCol>
