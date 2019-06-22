@@ -1,27 +1,27 @@
 import React from 'react'
-import { MDBCol, MDBRow, MDBNavLink, MDBBtn, MDBContainer } from 'mdbreact';
+import { MDBCol, MDBRow, MDBNavLink, MDBBtn, MDBContainer, MDBInput } from 'mdbreact';
 import Cookies from 'universal-cookie';
 
 
-class RegisterPage extends React.Component {
+class MainPortalPage extends React.Component {
 
-    handleFormSubmit = e => {
+    handleUpload = e => {
         e.preventDefault();
         const formData = new FormData(e.target);
         formData.set("timestampLastModified", new Date().toGMTString())
+        const cookies = new Cookies();
+        formData.set("token", cookies.get("userToken"))
         const SERVER_URL = "http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
         const LOCAL_SERVER = "http://localhost:3001"
-        fetch(LOCAL_SERVER + '/users/login', {
+        fetch(LOCAL_SERVER + '/users/me/upload', {
             method: 'POST',
             body: formData,
         }).then((res) => {
-            console.log("user LOGGED")
-            res.json().then(body => {
-                console.log(body.token)
-                const cookies = new Cookies();
-                cookies.set("userToken", body.token)
-                this.props.history.push("/app/main")
-            })
+           if(res.ok) {
+               console.log("Successfully uploaded")
+           } else {
+               console.log("failed to upload")
+           }
         })
             .catch(() => console.log("error"))
     };
@@ -34,15 +34,24 @@ class RegisterPage extends React.Component {
                 <MDBContainer>
                     <MDBRow className="justify-content-center">
                         <MDBCol className="col-6 text-center">
-                          {
-                              token ? 
-                              <div>
-                                  <div>You do not have any stuff</div>
-                                  <MDBNavLink to="/app/upload"><MDBBtn >Create stuff</MDBBtn></MDBNavLink>
-                              </div> 
-                              : 
-                              <div>You need to login to access this page</div>
-                          }
+                            {
+                                token ?
+                                    <div>
+                                        <div>You do not have any stuff</div>
+                                        <form onSubmit={this.handleUpload}>
+                                            <p className="h5 text-center mb-4">Create an account</p>
+                                            <div className="grey-text">
+                                                <MDBInput required group type="file" name="upl" />
+                                            </div>
+                                            <div className="text-center">
+                                                <MDBBtn color="primary" type="submit">Register</MDBBtn>
+                                            </div>
+                                        </form>
+                                        <MDBNavLink to="/app/upload"><MDBBtn >Create stuff</MDBBtn></MDBNavLink>
+                                    </div>
+                                    :
+                                    <div>You need to login to access this page</div>
+                            }
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
@@ -51,4 +60,4 @@ class RegisterPage extends React.Component {
     }
 }
 
-export default RegisterPage;
+export default MainPortalPage;
