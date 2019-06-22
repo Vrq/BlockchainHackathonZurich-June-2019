@@ -25,13 +25,13 @@ return (
     <div>
       <MDBNavbar color="primary-color" dark expand="md" fixed="top" scrolling transparent>
         <MDBContainer>
-          <MDBNavbarBrand>
-            <strong className="white-text">SYNAPSES</strong>
-          </MDBNavbarBrand>
+          
           <MDBNavbarToggler onClick={this.handleTogglerClick} />
           <MDBCollapse isOpen={this.state.collapsed} navbar>
+          
             <MDBNavbarNav left>
-            
+              
+			
               <MDBNavItem>
                 <MDBNavLink to="/About">About</MDBNavLink>
               </MDBNavItem>
@@ -51,6 +51,7 @@ return (
       {this.state.collapsed && overlay}
     </div>
   </Router>
+  
   <MDBView>
     <MDBMask className="d-flex justify-content-center align-items-center gradient">
       <MDBContainer>
