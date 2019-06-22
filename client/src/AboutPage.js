@@ -45,11 +45,13 @@ return (
   <MDBView>
     <MDBMask className="flex-center flex-column text-white text-center gradient">
               <h1>SYNAPSES</h1>
-              <h2>Here demand meets solutions.</h2>
+              <h2><br /></h2>
+              <h2>Here demand meets solutions.</h2><br />
               <h5>Try now easy ways to benefit from using SYNAPSES: </h5>
-              <h5>send a request for asset you need OR submit asset to fulful demand</h5><br />
-              <h5>We use ETH smart-contracts to bring together anyone who wants to sell any type of asset 
-              (data, multimedia, expertise, physical entities) with whose who need these assets.
+              <h5>get valuations of your asset or provide valuations to the assets of others to be rewarded</h5><br />
+              <h5>With the wisdom of the crowd and ETH smart-contracts we provide the most accurate valuations for any type of asset </h5>
+              <h5>(data, multimedia, expertise, physical entities) </h5>
+              <h5>and reward valuators incentivizing valuation creation.
         </h5>
               
             </MDBMask>
@@ -59,7 +61,7 @@ return (
     <MDBRow className="py-5">
       <MDBCol md="12" className="text-center">
         <p>
-          We use ETH smart-contracts to bring together anyone who wants to sell any type of asset (data, multimedia, expertise, physical entities) with whose who need these assets.
+          With the wisdom of the crowd and ETH smart-contracts we provide the most accurate valuations for any type of asset (data, multimedia, expertise, physical entities) and reward valuators incentivizing valuation creation.
         </p>
       </MDBCol>
     </MDBRow>

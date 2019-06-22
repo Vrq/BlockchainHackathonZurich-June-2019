@@ -77,7 +77,8 @@ return (
     <MDBRow className="py-5">
       <MDBCol md="12" className="text-center">
         <p>
-          We use ETH smart-contracts to bring together anyone who wants to sell any type of asset (data, multimedia, expertise, physical entities) with whose who need these assets.
+          With the wisdom of the crowd and ETH smart-contracts we provide the most accurate valuations for any type of asset (data, multimedia, expertise, physical entities) <br />
+          and reward valuators incentivizing valuation creation. 
         </p>
       </MDBCol>
     </MDBRow>
