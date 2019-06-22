@@ -3,8 +3,7 @@ require('./db/mongoose')
 require('./aws/aws')
 const userRouter = require('./routers/user')
 const fileRouter = require('./routers/file')
-const bodyParser = require('body-parser');
-const auth = require('./middleware/auth')
+const bodyParser = require('body-parser')
 
 const app = express()
 const port = process.env.PORT || 3000

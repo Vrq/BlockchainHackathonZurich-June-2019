@@ -1,13 +1,11 @@
 const mongoose = require('mongoose')
-const validator = require('validator')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
 
 const fileSchema = new mongoose.Schema({
-    file: {
-        type: String,
-        required: true,
-        trim: true
+    filename: {
+        type: String
+    },
+    hash: {
+        type: String
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,

@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
 })
 
 //used by upload form
-router.post('/upload', upload.array('upl', 1), (req, res, next) => {
+router.post('/users/me/upload', [upload.array('upl', 1)], (req, res, next) => {
     res.send("Uploaded!")
 })
 
