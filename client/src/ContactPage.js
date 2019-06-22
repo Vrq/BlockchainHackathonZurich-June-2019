@@ -49,8 +49,7 @@ class ContactPage extends React.Component {
 
         <MDBView>
           <MDBMask
-            className="d-flex justify-content-center align-items-center"
-            overlay="indigo-strong"
+            className="d-flex justify-content-center align-items-center gradient">
           >
             <MDBContainer>
               <MDBRow>
