@@ -44,29 +44,15 @@ return (
       </MDBNavbar>
       {this.state.collapsed && overlay}
     </div>
+    
   <MDBView>
-    <MDBMask className="d-flex justify-content-center align-items-center gradient">
-      <MDBContainer>
-        <MDBRow>
-          THIS IS ABOUT PAGE
-          <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-            <h1 className="h1-responsive font-weight-bold mt-sm-5">
-              SYNAPSES{" "}
-            </h1>
-            <hr className="hr-light" />
-            <h6 className="mb-4">
-              Universal marketplace to incentivize value creation
-            </h6>
-            
-		
-			<MDBNavLink to="/app/login"><MDBBtn outline color="white">Login</MDBBtn></MDBNavLink>
-			
-			<MDBNavLink to="/app/register"><MDBBtn outline color="white">Sign up</MDBBtn>></MDBNavLink>
-			
-          </div>
-        </MDBRow>
-      </MDBContainer>
-    </MDBMask>
+    <MDBMask overlay="blue-light" className="flex-center flex-column text-white text-center">
+              <h1>SYNAPSES</h1>
+              <h2>Here demand meets solutions.</h2>
+              <h5>Easy ways to benefit from using SYNAPSES: </h5>
+              <p>send a request for asset you need OR submit asset to fulful demand</p><br />
+              <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
+            </MDBMask>
   </MDBView>
 
   <MDBContainer>
