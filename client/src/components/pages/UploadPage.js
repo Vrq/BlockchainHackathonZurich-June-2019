@@ -14,7 +14,7 @@ class UploadPage extends React.Component {
             factory_contract: ''
         }
         this.loadBlockchainData = this.loadBlockchainData.bind(this);
-        this.foo = this.foo.bind(this);
+        this.sendTx = this.sendTx.bind(this);
         this.smart_contract = "0x5cb01dfc56904c04e339948c8c93a62d0ea5b2f7";
         this.to = "0x138a0bbcd5b6b913435ffaf9f77885dc82239226";
         this.abi = [
@@ -237,6 +237,11 @@ class UploadPage extends React.Component {
         this.loadBlockchainData()
     }
 
+    onETHChane(){
+        //make the value of USD input 311 times the value in ETH
+
+    }
+
     async loadBlockchainData() {
         if (window.web3 === undefined || window.web3.currentProvider === undefined) {
             this.setState({ noweb3: true })
@@ -290,7 +295,7 @@ class UploadPage extends React.Component {
         alert('Success');
     }
 
-    async foo() {
+    async sendTx() {
         var sender = this.state.account;
         //let contract = new this.state.web3js.eth.Contract(this.abi, this.smart_contract);
         //this.state.web3js.eth.sendTransaction({to:this.smart_contract,
@@ -300,7 +305,7 @@ class UploadPage extends React.Component {
         console.log(sender)
         console.log(this.to)
         console.log(this.factory)
-        await this.factory.methods.forwardFunds(this.to).send(
+        await this.factory.methods.forwardFunds("0xB3B3886F389F27BC1F2A41F0ADD45A84453F0D2A877FCD1225F13CD95953A86A").send(
             {
                 from: sender,
                 value: this.state.web3js.utils.toWei("0.5", "ether"),
@@ -393,7 +398,7 @@ class UploadPage extends React.Component {
                                 <MDBIcon className="blue-text my-2" fab icon="dollar-sign" size="3x"/>
                             </MDBCol>
                             <MDBCol md="2">
-                                <MDBBtn color="primary" >Attach reward</MDBBtn>
+                                <MDBBtn color="primary" onClick={this.sendTx}>Attach reward</MDBBtn>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
