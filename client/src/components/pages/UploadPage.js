@@ -324,29 +324,30 @@ class UploadPage extends React.Component {
         const cookies = new Cookies();
         const SERVER_URL = "http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
         const LOCAL_SERVER = "http://localhost:3001"
-        fetch(SERVER_URL + '/users/me/upload', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Authorization': 'Bearer ' + cookies.get("userToken")
-            }
-        }).then((res) => {
-            if (res.ok) {
-                //this.hash = res.hash
-                console.log(reward)
+        this.setState({showDone: true})
+        // fetch(SERVER_URL + '/users/me/upload', {
+        //     method: 'POST',
+        //     body: formData,
+        //     headers: {
+        //         'Authorization': 'Bearer ' + cookies.get("userToken")
+        //     }
+        // }).then((res) => {
+        //     if (res.ok) {
+        //         //this.hash = res.hash
+        //         console.log(reward)
 
-                console.log("Successfully uploaded")
-                res.json().then(responseBody => {
-                    // responseBody should contain the file hash
-                    console.log(reward)
-                });
-                this.sendTx()
-            } else {
-                console.log("failed to upload")
-                console.log(res)
-            }
-        })
-            .catch(() => console.log("error"))
+        //         console.log("Successfully uploaded")
+        //         res.json().then(responseBody => {
+        //             // responseBody should contain the file hash
+        //             console.log(reward)
+        //         });
+        //         this.sendTx()
+        //     } else {
+        //         console.log("failed to upload")
+        //         console.log(res)
+        //     }
+        // })
+        //     .catch(() => console.log("error"))
     };
 
     render() {
@@ -363,7 +364,8 @@ class UploadPage extends React.Component {
                                     token ?
                                         <div>
                                             {/* <p>Your account: {this.state.account}</p> */}
-                                            <h2 className="pb-5 mb-5">Claim your digital ownership</h2>
+                                            {this.state.showDone && <h2 className="green-text py-3">Your ownership is claimed</h2>}
+                                            <h2 className="pb-5 mb-5"><b>Claim your digital ownership</b></h2>
                                             <form onSubmit={this.handleUpload}>
                                                 <MDBRow>
                                                     <MDBCol md="5" className="px-5 mx-4">

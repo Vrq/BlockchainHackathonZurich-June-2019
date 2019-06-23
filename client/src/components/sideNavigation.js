@@ -12,14 +12,14 @@ const TopNavigation = () => {
             <MDBListGroup className="list-group-flush">
                 <NavLink exact={true} to="/app/main" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="chart-pie" className="mr-3"/>
-                        Your stuff
+                        <MDBIcon icon="folder" className="mr-3"/>
+                        Your collection
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/app/upload" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="user" className="mr-3"/>
-                        Create stuff
+                        <MDBIcon icon="upload" className="mr-3"/>
+                        Upload items
                     </MDBListGroupItem>
                 </NavLink>
             </MDBListGroup>
