@@ -1,4 +1,4 @@
-import {MDBIcon, MDBCol, MDBRow, MDBInput, MDBBtn, MDBContainer, MDBNavLink } from 'mdbreact';
+import { MDBIcon, MDBCol, MDBRow, MDBInput, MDBBtn, MDBContainer, MDBNavLink } from 'mdbreact';
 import * as constants from "../../constants";
 import React from 'react';
 import Web3 from 'web3'
@@ -18,226 +18,226 @@ class UploadPage extends React.Component {
         this.smart_contract = "0x5cb01dfc56904c04e339948c8c93a62d0ea5b2f7";
         this.to = "0x138a0bbcd5b6b913435ffaf9f77885dc82239226";
         this.abi = [
-    {
-      "constant": false,
-      "inputs": [],
-      "name": "renounceOwnership",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "owner",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "isOwner",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "name": "vouchers",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "transferOwnership",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "name": "datasales",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "name": "id",
-          "type": "bytes32"
-        }
-      ],
-      "name": "DataOfferCreated",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "name": "id",
-          "type": "bytes32"
-        },
-        {
-          "indexed": false,
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "EmitedVouchers",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "name": "value",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "name": "id",
-          "type": "bytes32"
-        }
-      ],
-      "name": "FundsForward",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "previousOwner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "OwnershipTransferred",
-      "type": "event"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "id",
-          "type": "bytes32"
-        }
-      ],
-      "name": "createDataOffer",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "id",
-          "type": "bytes32"
-        },
-        {
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "emitVouchers",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "hash",
-          "type": "bytes32"
-        }
-      ],
-      "name": "forwardFunds",
-      "outputs": [],
-      "payable": true,
-      "stateMutability": "payable",
-      "type": "function"
-    }
-  ]
+            {
+                "constant": false,
+                "inputs": [],
+                "name": "renounceOwnership",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "owner",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "isOwner",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "vouchers",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "newOwner",
+                        "type": "address"
+                    }
+                ],
+                "name": "transferOwnership",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "name": "",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "datasales",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "name": "id",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "DataOfferCreated",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "name": "id",
+                        "type": "bytes32"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "amount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "EmitedVouchers",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "name": "from",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "value",
+                        "type": "uint256"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "id",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "FundsForward",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "name": "previousOwner",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "name": "newOwner",
+                        "type": "address"
+                    }
+                ],
+                "name": "OwnershipTransferred",
+                "type": "event"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "id",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "createDataOffer",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "id",
+                        "type": "bytes32"
+                    },
+                    {
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "amount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "emitVouchers",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "forwardFunds",
+                "outputs": [],
+                "payable": true,
+                "stateMutability": "payable",
+                "type": "function"
+            }
+        ]
     }
 
     componentWillMount() {
         this.loadBlockchainData()
     }
 
-    onETHChane(){
+    onETHChane() {
         //make the value of USD input 311 times the value in ETH
 
     }
@@ -320,6 +320,7 @@ class UploadPage extends React.Component {
     handleUpload = e => {
         e.preventDefault();
         const formData = new FormData(e.target);
+        const reward = formData.get('rewardValue')
         const cookies = new Cookies();
         const SERVER_URL = "http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
         const LOCAL_SERVER = "http://localhost:3001"
@@ -332,9 +333,12 @@ class UploadPage extends React.Component {
         }).then((res) => {
             if (res.ok) {
                 //this.hash = res.hash
+                console.log(reward)
+
                 console.log("Successfully uploaded")
                 res.json().then(responseBody => {
                     // responseBody should contain the file hash
+                    console.log(reward)
                 });
                 this.sendTx()
             } else {
@@ -350,7 +354,7 @@ class UploadPage extends React.Component {
         const token = cookies.get("userToken")
         return (
             <div>
-                {this.state.noweb3 ? <h3 className="text-center">You need to install Metamask (link) to use our portal</h3>
+                {this.state.noweb3 ? <h3 className="text-center">You need to install Metamask <a href="https://metamask.io/" target="_blank">(link)</a> to use our portal</h3>
                     :
                     <MDBContainer>
                         <MDBRow className="justify-content-center">
@@ -359,40 +363,25 @@ class UploadPage extends React.Component {
                                     token ?
                                         <div>
                                             {/* <p>Your account: {this.state.account}</p> */}
-                                            <h4>Upload your piece of art</h4>
+                                            <h2 className="pb-5 mb-5">Claim your digital ownership</h2>
                                             <form onSubmit={this.handleUpload}>
                                                 <MDBRow>
-                                                    <MDBCol md="3" className="my-5">
-                                                        <h5>Choose the file</h5>
+                                                    <MDBCol md="5" className="px-5 mx-4">
+                                                        <h4>Your piece of art 😺</h4>
+                                                        <div className="grey-text">
+                                                            <MDBInput required group type="file" name="upl" />
+                                                        </div>
                                                     </MDBCol>
-                                                    <MDBCol md="5">
-                                                    <div className="grey-text">
-                                                        <MDBInput required group type="file" name="upl" />
-                                                    </div>
-                                                    </MDBCol>
-                                                </MDBRow>
-                                                <MDBRow>
-                                                    <MDBCol md="3" className="my-5">
-                                                        <h5>Choose the reward</h5>
-                                                    </MDBCol>
-                                                    <MDBCol md="2">
-                                                        <MDBInput label="ETH"/>
-                                                    </MDBCol>
-                                                    <MDBCol md="1">
-                                                        <MDBIcon className="blue-text my-2" fab icon="ethereum" size="3x"/>
-                                                    </MDBCol>
-                                                    <MDBCol md="1">
-                                                        <MDBIcon className="my-4" fas icon="equals" size="2x"/>
-                                                    </MDBCol>
-                                                    <MDBCol md="2">
-                                                        <MDBInput label="USD"/>
-                                                    </MDBCol>
-                                                    <MDBCol md="1">
-                                                        <MDBIcon className="blue-text my-2" fab icon="dollar-sign" size="3x"/>
+                                                    <MDBCol md="5" className="px-5 mx-5">
+                                                        <h4>Reward for the reviewers 💰</h4>
+                                                        <MDBInput label="USD $" name="rewardValue" />
                                                     </MDBCol>
                                                 </MDBRow>
                                                 <MDBRow>
-                                                    <div className="text-center my-3">
+
+                                                </MDBRow>
+                                                <MDBRow className='justify-content-center'>
+                                                    <div className="text-center my-5 mr-5">
                                                         <MDBBtn color="primary" type="submit">Upload</MDBBtn>
                                                     </div>
                                                 </MDBRow>
