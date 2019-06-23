@@ -1,3 +1,5 @@
+pragma solidity ^0.5.0;
+
 import './Voucher.sol';
 import './DataSale.sol';
 import 'openzeppelin-solidity/contracts/ownership/Ownable.sol';
@@ -12,7 +14,7 @@ contract Factory is Ownable{
 
     function createDataOffer(bytes32 id) public {
         Voucher v = new Voucher(id);
-        DataSale d =  new DataSale(id, v);
+        DataSale d = new DataSale(id, v);
         vouchers[id] = v;
         datasales[id] = d;
         emit DataOfferCreated(id);
