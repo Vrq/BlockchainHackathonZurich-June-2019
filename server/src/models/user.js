@@ -24,13 +24,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        trim: true,
-        minlength: 8,
-        validate(value) {
-            if (value.toLowerCase().includes('password')) {
-                throw new Error('Password cannot contain "password"')
-            }
-        }
+        trim: true
     },
     tokens: [{
         token: {
