@@ -23,7 +23,7 @@
 
 SYNAPSES is a valuation platform that rewards users for accurately estimating price of any asset, including previously non-bankable assets, such as a piece of art.
 The value of the asset is determined based on the wisdom of the crowd, stating that average opinion of the large group of people is more accurate than any expert.
-The problem with existing valuation solutions is that they are centralised and traditionally made by a few experts, which leads to possibl mistakes or manipulations.
+The problem with existing valuation solutions is that they are centralised and traditionally made by a few experts, which leads to possible mistakes or manipulations.
 
 On SYNAPSES multiple users made reviews for assets and evaluate their price. Final price is determined as a weighted average of all reviews, where weight depends on the rating of the validator coming from how accurate were his previous valuations.
 Anyone can submit any asset for valuation.
