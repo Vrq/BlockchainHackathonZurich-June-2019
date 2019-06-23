@@ -61,20 +61,20 @@ router.post('/users/me/upload', [auth, upload.array('upl', 1)], (req, res, next)
         req.user.collectibles.push(hashData)
         req.user.save()
 
-        // upload hash data json to s3
-        s3.putObject({ 
-            Bucket: 'sbhack19-prod/hashData', 
-            Key: timeStamp + '_' + hashData.filename, 
-            Body: JSON.stringify(hashData),
-            ContentType: "application/json"
-        }, function (err, data) {
-            if (err) {
-                console.log(err, err.stack);
-            } 
-            else {
-                console.log(hashData)
-            }
-        })
+        // // upload hash data json to s3
+        // s3.putObject({ 
+        //     Bucket: 'sbhack19-prod/hashData', 
+        //     Key: timeStamp + '_' + hashData.filename, 
+        //     Body: JSON.stringify(hashData),
+        //     ContentType: "application/json"
+        // }, function (err, data) {
+        //     if (err) {
+        //         console.log(err, err.stack);
+        //     } 
+        //     else {
+        //         console.log(hashData)
+        //     }
+        // })
 
         // Replace uploaded file with copy matching hash data json's naming convention (timeStamp_filename)
         s3.copyObject({
