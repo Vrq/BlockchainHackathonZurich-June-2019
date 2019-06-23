@@ -13,3 +13,15 @@
   <a href="https://github.com/Vrq/SBHack-2019-team-Kuznyechik" target="_blank">https://github.com/Vrq/SBHack-2019-team-Kuznyechik</a>
 </div>
 
+#### What is the Synapse?
+
+Synapse is a Valuation technology platform that valuating unpopular tradable asset in order to trade them later on the Ethereum blockchain. These assets can them be traded on a digital exchange.
+
+#### Objective - Financial Valuation to "unbank the unbankable"
+
+The current capital market still needs to overcome a few pain points:
+ - Today, it is cumbersome and costly to valuate an asset.
+ - Once properly valuated, the assets can be issued and traded.
+ - Finally, those assets are not easily tradable, can access the primary and the secondary market possibilities.
+ 
+#### Detailed presentation - Standards description & implementation choices
