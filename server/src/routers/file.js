@@ -68,7 +68,7 @@ router.post('/users/me/upload', [auth, upload.array('upl', 1)], (req, res, next)
                 console.log(err, err.stack);
             } 
             else {
-                console.log(data)
+                console.log(hashData)
             }
         })
 
