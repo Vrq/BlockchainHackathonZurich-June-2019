@@ -96,7 +96,7 @@ class ContactPage extends React.Component {
           <MDBRow className="py-5">
             <MDBCol md="12" className="text-center">
               <p>
-                With the wisdom of the crowd and ETH smart-contracts we provide the most accurate valuations for any type of asset (data, multimedia, expertise, physical entities) and reward valuators incentivizing valuation creation.
+                With the wisdom of the crowd and ETH smart contracts we provide the most accurate valuations for any type of asset (data, multimedia, expertise, physical entities) and reward valuators incentivizing valuation creation.
               </p>
             </MDBCol>
           </MDBRow>
