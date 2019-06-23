@@ -23,7 +23,7 @@ class RegisterPage extends React.Component {
                     cookies.set("userToken", body.token)
                     cookies.set("loginEmail", body.user.email)
                     console.log(body)
-                    this.props.history.push("/app/main")
+                    this.props.history.push("/app/upload")
                 })
             }
             console.log("User login error")
