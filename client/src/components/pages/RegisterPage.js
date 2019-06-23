@@ -19,7 +19,7 @@ class RegisterPage extends React.Component {
             } else {
                 console.log("error response")
             }
-          
+
         })
             .catch(() => console.log("error"))
     };

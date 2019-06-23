@@ -8,8 +8,12 @@ contract Voucher is ERC20Mintable, Pausable{
     string public name = "Voucher";
     bytes32 public id;
 
+    event FundsReceived(address sender, uint256 value);
     constructor(bytes32 _id) public {
         id = _id;
     }
 
+    function () external payable{
+        emit FundsReceived(msg.sender, msg.value);
+    }
 }

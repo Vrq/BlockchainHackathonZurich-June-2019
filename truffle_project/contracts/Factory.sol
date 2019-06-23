@@ -1,3 +1,5 @@
+pragma solidity ^0.5.0;
+
 import './Voucher.sol';
 import './DataSale.sol';
 import 'openzeppelin-solidity/contracts/ownership/Ownable.sol';
@@ -8,11 +10,11 @@ contract Factory is Ownable{
 
     event DataOfferCreated(bytes32 id);
     event EmitedVouchers(bytes32 id, address to, uint amount);
-    event FundsForward(address from, address to, uint value);
+    event FundsForward(address from, uint value, bytes32 id);
 
-    function createDataOffer(bytes32 id) public onlyOwner{
+    function createDataOffer(bytes32 id) public {
         Voucher v = new Voucher(id);
-        DataSale d =  new DataSale(id, v);
+        DataSale d = new DataSale(id, v);
         vouchers[id] = v;
         datasales[id] = d;
         emit DataOfferCreated(id);
@@ -24,9 +26,10 @@ contract Factory is Ownable{
         emit EmitedVouchers(id, to, amount);
     }
 
-    function forwardFunds(address payable a) public payable{
-        a.transfer(msg.value);
-        emit FundsForward(msg.sender, a, msg.value);
+    function forwardFunds(bytes32 hash) public payable{
+        Voucher v = vouchers[hash];
+        address(v).transfer(msg.value);
+        emit FundsForward(msg.sender, msg.value, hash);
     }
 
 

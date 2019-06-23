@@ -49,7 +49,7 @@ return (
               <h2>Try now easy ways to benefit from using SYNAPSES: </h2>
               <h2>get valuations of your asset or </h2>
               <h2>provide valuations to the assets of others to be rewarded</h2><br /><br />
-              <h2>With the wisdom of the crowd and ETH smart-contracts </h2>
+              <h2>With the wisdom of the crowd and ETH smart contracts </h2>
               <h2>we provide the most accurate valuations for any type of asset </h2>
               <h2>and reward valuators incentivizing valuation creation.
         </h2>
@@ -61,7 +61,7 @@ return (
     <MDBRow className="py-5">
       <MDBCol md="12" className="text-center">
         <p>
-          With the wisdom of the crowd and ETH smart-contracts we provide the most accurate valuations for any type of asset (data, multimedia, expertise, physical entities) and reward valuators incentivizing valuation creation.
+          With the wisdom of the crowd and ETH smart contracts we provide the most accurate valuations for any type of asset (data, multimedia, expertise, physical entities) and reward valuators incentivizing valuation creation.
         </p>
       </MDBCol>
     </MDBRow>

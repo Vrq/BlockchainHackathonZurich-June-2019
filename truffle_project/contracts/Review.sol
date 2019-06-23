@@ -5,16 +5,15 @@ import 'openzeppelin-solidity/contracts/ownership/Ownable.sol';
 
 contract Review is Ownable{
  
-    mapping(bytes32 => Reviews) public reviewid;
+    mapping(bytes32 => Review) public reviewid;
     event ReviewSubmitted(bytes32 id, address from);
 
     struct Review{
-        uint contributor;
-        bytes Reviews;
+        bytes32 contributor;
+        bytes32 data;
     }
     function SubmitReview(bytes32 id, bytes32 metadata) public onlyOwner{
-        Review r = new Reviews(id, metadata);
-        vouchers[id] = r;
+        Review memory r = Review(id, metadata);
         emit ReviewSubmitted(id, msg.sender);
     }
 
