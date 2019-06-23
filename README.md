@@ -15,7 +15,7 @@
 
 #### What is the Synapse?
 
-Synapse is a Valuation technology platform that valuating unpopular tradable asset in order to trade them later on the Ethereum blockchain. These assets can them be traded on a digital exchange.
+Synapse is a valuation technology platform that valuating unpopular tradable asset in order to trade them later on the Ethereum blockchain. These assets can them be traded on a [digital exchange](https://github.com/ConsenSys/ERC1400).
 
 #### Objective - Financial Valuation to "unbank the unbankable"
 
