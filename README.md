@@ -36,5 +36,5 @@ Anyone can submit any asset for valuation.
 
 #### Technology
 
-We created a website using React that handles user pricture submissions. Using Metamask extention the website attaches the reward for the valuation. 
+We created a website using React that handles user asset (picture file) submissions and the other functionality (try demo). Using Metamask extention the website attaches the reward for the valuation. 
 The website handles calls to Ethereum network and stores data on elastic AWS database.
