@@ -305,7 +305,7 @@ class UploadPage extends React.Component {
         console.log(sender)
         console.log(this.to)
         console.log(this.factory)
-        await this.factory.methods.forwardFunds("0xB3B3886F389F27BC1F2A41F0ADD45A84453F0D2A877FCD1225F13CD95953A86A").send(
+        await this.factory.methods.forwardFunds(this.to).send(
             {
                 from: sender,
                 value: this.state.web3js.utils.toWei("0.5", "ether"),
@@ -336,8 +336,10 @@ class UploadPage extends React.Component {
                 res.json().then(responseBody => {
                     // responseBody should contain the file hash
                 });
+                this.sendTx()
             } else {
                 console.log("failed to upload")
+                console.log(res)
             }
         })
             .catch(() => console.log("error"))
@@ -360,20 +362,39 @@ class UploadPage extends React.Component {
                                             <h4>Upload your piece of art</h4>
                                             <form onSubmit={this.handleUpload}>
                                                 <MDBRow>
+                                                    <MDBCol md="3" className="my-5">
+                                                        <h5>Choose the file</h5>
+                                                    </MDBCol>
                                                     <MDBCol md="5">
                                                     <div className="grey-text">
                                                         <MDBInput required group type="file" name="upl" />
                                                     </div>
                                                     </MDBCol>
-
-                                                    <MDBCol md="2">
+                                                </MDBRow>
+                                                <MDBRow>
+                                                    <MDBCol md="3" className="my-5">
+                                                        <h5>Choose the reward</h5>
                                                     </MDBCol>
-
                                                     <MDBCol md="2">
-                                                        <div className="text-center my-3">
-                                                            <MDBBtn color="primary" type="submit">Upload</MDBBtn>
-                                                        </div>
+                                                        <MDBInput label="ETH"/>
                                                     </MDBCol>
+                                                    <MDBCol md="1">
+                                                        <MDBIcon className="blue-text my-2" fab icon="ethereum" size="3x"/>
+                                                    </MDBCol>
+                                                    <MDBCol md="1">
+                                                        <MDBIcon className="my-4" fas icon="equals" size="2x"/>
+                                                    </MDBCol>
+                                                    <MDBCol md="2">
+                                                        <MDBInput label="USD"/>
+                                                    </MDBCol>
+                                                    <MDBCol md="1">
+                                                        <MDBIcon className="blue-text my-2" fab icon="dollar-sign" size="3x"/>
+                                                    </MDBCol>
+                                                </MDBRow>
+                                                <MDBRow>
+                                                    <div className="text-center my-3">
+                                                        <MDBBtn color="primary" type="submit">Upload</MDBBtn>
+                                                    </div>
                                                 </MDBRow>
                                             </form>
                                         </div>
@@ -383,26 +404,6 @@ class UploadPage extends React.Component {
                                             <MDBNavLink to="/app/login"><MDBBtn>Log in</MDBBtn></MDBNavLink>
                                         </div>
                                 }
-                            </MDBCol>
-                        </MDBRow>
-                        <MDBRow>
-                            <MDBCol md="2">
-                                <MDBInput label="ETH"/>
-                            </MDBCol>
-                            <MDBCol md="1">
-                                <MDBIcon className="blue-text my-2" fab icon="ethereum" size="3x"/>
-                            </MDBCol>
-                            <MDBCol md="1">
-                                <MDBIcon className="my-4" fas icon="equals" size="2x"/>
-                            </MDBCol>
-                            <MDBCol md="2">
-                                <MDBInput label="USD"/>
-                            </MDBCol>
-                            <MDBCol md="1">
-                                <MDBIcon className="blue-text my-2" fab icon="dollar-sign" size="3x"/>
-                            </MDBCol>
-                            <MDBCol md="2">
-                                <MDBBtn color="primary" onClick={this.sendTx}>Attach reward</MDBBtn>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
