@@ -1,4 +1,4 @@
-import { MDBCol, MDBRow, MDBInput, MDBBtn, MDBContainer, MDBNavLink } from 'mdbreact';
+import {MDBIcon, MDBCol, MDBRow, MDBInput, MDBBtn, MDBContainer, MDBNavLink } from 'mdbreact';
 import * as constants from "../../constants";
 import React from 'react';
 import Web3 from 'web3'
@@ -343,19 +343,29 @@ class UploadPage extends React.Component {
                     :
                     <MDBContainer>
                         <MDBRow className="justify-content-center">
-                            <MDBCol className="col-6 text-center">
+                            <MDBCol className="col-12 text-center">
                                 {
                                     token ?
                                         <div>
                                             {/* <p>Your account: {this.state.account}</p> */}
                                             <h4>Upload your piece of art</h4>
                                             <form onSubmit={this.handleUpload}>
-                                                <div className="grey-text">
-                                                    <MDBInput required group type="file" name="upl" />
-                                                </div>
-                                                <div className="text-center">
-                                                    <MDBBtn color="primary" type="submit">Upload</MDBBtn>
-                                                </div>
+                                                <MDBRow>
+                                                    <MDBCol md="5">
+                                                    <div className="grey-text">
+                                                        <MDBInput required group type="file" name="upl" />
+                                                    </div>
+                                                    </MDBCol>
+
+                                                    <MDBCol md="2">
+                                                    </MDBCol>
+
+                                                    <MDBCol md="2">
+                                                        <div className="text-center my-3">
+                                                            <MDBBtn color="primary" type="submit">Upload</MDBBtn>
+                                                        </div>
+                                                    </MDBCol>
+                                                </MDBRow>
                                             </form>
                                         </div>
                                         :
@@ -364,6 +374,26 @@ class UploadPage extends React.Component {
                                             <MDBNavLink to="/app/login"><MDBBtn>Log in</MDBBtn></MDBNavLink>
                                         </div>
                                 }
+                            </MDBCol>
+                        </MDBRow>
+                        <MDBRow>
+                            <MDBCol md="2">
+                                <MDBInput label="ETH"/>
+                            </MDBCol>
+                            <MDBCol md="1">
+                                <MDBIcon className="blue-text my-2" fab icon="ethereum" size="3x"/>
+                            </MDBCol>
+                            <MDBCol md="1">
+                                <MDBIcon className="my-4" fas icon="equals" size="2x"/>
+                            </MDBCol>
+                            <MDBCol md="2">
+                                <MDBInput label="USD"/>
+                            </MDBCol>
+                            <MDBCol md="1">
+                                <MDBIcon className="blue-text my-2" fab icon="dollar-sign" size="3x"/>
+                            </MDBCol>
+                            <MDBCol md="2">
+                                <MDBBtn color="primary" >Attach reward</MDBBtn>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
