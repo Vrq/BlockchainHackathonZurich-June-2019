@@ -323,7 +323,7 @@ class UploadPage extends React.Component {
         const cookies = new Cookies();
         const SERVER_URL = "http://tk19server-env.pmxnizzw2s.us-east-2.elasticbeanstalk.com"
         const LOCAL_SERVER = "http://localhost:3001"
-        fetch(LOCAL_SERVER + '/users/me/upload', {
+        fetch(SERVER_URL + '/users/me/upload', {
             method: 'POST',
             body: formData,
             headers: {
