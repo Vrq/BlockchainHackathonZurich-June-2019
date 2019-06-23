@@ -7,7 +7,6 @@ const multer = require('multer')
 const multerS3 = require('multer-s3')
 const bcrypt = require('bcryptjs')
 const auth = require('../middleware/auth')
-const File = require('../models/file')
 const router = new express.Router()
 
 router.use(express.json())
@@ -34,6 +33,7 @@ router.get('/', (req, res) => {
 
 router.post('/users/me/upload', [auth, upload.array('upl', 1)], (req, res, next) => {
     const key = req.files[0].originalname
+    const timeStamp = Date.now().toString()
 
     async function getObject(bucket, objectKey) {
         try {
@@ -45,20 +45,24 @@ router.post('/users/me/upload', [auth, upload.array('upl', 1)], (req, res, next)
         }
     }
 
-    getObject('sbhack19-prod/upload', key).then( async (res) => {
+    // download uploaded file's buffer from s3
+    getObject('sbhack19-prod/upload', key).then( async (res2) => {
 
-        const hash = await bcrypt.hash(res, 8)
+        // hash upload file buffer
+        const hash = await bcrypt.hash(res2, 8)
 
-        data = {
+        // create hash data json
+        const hashData = {
             filename: key.split('.').slice(0, -1).join('.') + '.json', //replace extension (taken from upload) with .json
             hash,
             owner: req.user._id
         }
 
+        // upload hash data json to s3
         s3.putObject({ 
             Bucket: 'sbhack19-prod/hashData', 
-            Key: data.filename, 
-            Body: JSON.stringify(data),
+            Key: timeStamp + '_' + hashData.filename, 
+            Body: JSON.stringify(hashData),
             ContentType: "application/json"
         }, function (err, data) {
             if (err) {
@@ -67,11 +71,26 @@ router.post('/users/me/upload', [auth, upload.array('upl', 1)], (req, res, next)
             else {
                 console.log(data)
             }
-        });
-      
+        })
+
+        // Replace uploaded file with copy matching hash data json's naming convention (timeStamp_filename)
+        s3.copyObject({
+            Bucket: 'sbhack19-prod/upload',
+            CopySource: `${'sbhack19-prod/upload/'}${key}`,
+            Key: timeStamp + '_' + key
+        }).promise()    
+            .then(() =>
+                s3.deleteObject({
+                    Bucket: 'sbhack19-prod/upload',
+                    Key: key
+                }).promise()
+            )
+            .catch((e) => console.error(e))
+
+        res.send(hashData)
     })
 
-    res.send("Uploaded file, personal hash created & stored!")
+    // res.send() ///?
 }, (error, req, res, next) => {
     res.status(400).send({ error: error.message })
 })
