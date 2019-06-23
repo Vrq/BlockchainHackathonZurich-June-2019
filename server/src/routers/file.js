@@ -36,7 +36,7 @@ router.post('/users/me/upload', [auth, upload.array('upl', 1)], (req, res, next)
 
     async function getObject(bucket, objectKey) {
         try {
-            const data = await s3.getObject({ Bucket: bucket, Key: objectKey }).promise();
+            const data = await s3.getObject({ Bucket: bucket, Key: objectKey }).promise()
 
             return data.Body.toString('utf-8');
         } catch (e) {
@@ -52,10 +52,14 @@ router.post('/users/me/upload', [auth, upload.array('upl', 1)], (req, res, next)
 
         // create hash data json
         const hashData = {
-            filename: key.split('.').slice(0, -1).join('.') + '.json', //replace extension (taken from upload) with .json
+            filename: timeStamp + '_' + key.split('.').slice(0, -1).join('.') + '.json', //replace extension (taken from upload) with .json
             hash,
+            uri: 'https://sbhack19-prod.s3.eu-central-1.amazonaws.com/upload/' + timeStamp + '_' + key,
             owner: req.user._id
         }
+
+        req.user.collectibles.push(hashData)
+        req.user.save()
 
         // upload hash data json to s3
         s3.putObject({ 

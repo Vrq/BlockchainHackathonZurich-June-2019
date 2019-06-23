@@ -26,6 +26,9 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    collectibles: [{
+        // type: Object
+    }],
     tokens: [{
         token: {
             type: String,
