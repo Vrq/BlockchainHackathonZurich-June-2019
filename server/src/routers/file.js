@@ -20,7 +20,6 @@ const upload = multer({
         acl: 'public-read',
         bucket: 'sbhack19-prod/upload',
         key: function (req, file, cb) {
-            console.log(file.originalname);
             cb(null, file.originalname)
         }
     })
@@ -89,8 +88,6 @@ router.post('/users/me/upload', [auth, upload.array('upl', 1)], (req, res, next)
 
         res.send(hashData)
     })
-
-    // res.send() ///?
 }, (error, req, res, next) => {
     res.status(400).send({ error: error.message })
 })
