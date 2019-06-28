@@ -7,7 +7,7 @@ if (env !== "production") {
 }
 const USER = process.env.DB_USER || config.DB_USER
 const PASSWORD = process.env.DB_PASS || config.DB_PASS
-const CONNECTION_URI = 'mongodb+srv://' + USER + ':' + PASSWORD + '@kuznyechik-klr4c.mongodb.net/test?retryWrites=true&w=majority'
+const CONNECTION_URI = 'mongodb+srv://' + USER + ':' + PASSWORD + '@kuznyechik-cqplx.mongodb.net/kuznyechik?retryWrites=true&w=majority'
 
 mongoose.connect(CONNECTION_URI, {
     useNewUrlParser: true,
